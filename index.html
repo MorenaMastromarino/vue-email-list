@@ -8,10 +8,14 @@
 </head>
 <body>
   
+  
   <div id="app">
-    <ul>
+    
+    <ul v-if="!isLoading">
       <li v-for="mail in mailList">{{mail}}</li>
     </ul>
+
+    <h2 v-else>loading...</h2>
 
   </div>
 

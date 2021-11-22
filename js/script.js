@@ -3,6 +3,7 @@ const app = new Vue({
 
   data: {
     mailList: [],
+    isLoading: true,    
   },
 
   methods:{
@@ -12,10 +13,15 @@ const app = new Vue({
           .then((response) =>{
             const data = response.data;
             this.mailList.push(data.response);
-         })
-         
-      };
-      console.log(this.mailList);
+
+            if(this.mailList.length === 10){              
+              this.isLoading = false;
+            };
+
+         })           
+      };     
+      
+      
     },
 
   },
