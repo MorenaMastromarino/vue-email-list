@@ -11,6 +11,7 @@
   
   <div id="app">
     
+    <button @click="getMailList">Genera email</button>
     <div v-if="!isError">
       <ul v-if="!isLoading">
         <li v-for="mail in mailList">{{mail}}</li>
